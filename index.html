@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: fit-content;
+
+            input,
+            select,
+            textarea,
+            button {
+                padding: 10px;
+                border-radius: 12px;
+                outline: none;
+                border: 1px solid #c4c4c4;
+            }
+
+            button {
+                cursor: pointer;
+            }
+
+            .error {
+                border-color: red;
+            }
+
+
+
+        }
+
+        dialog {
+            border: none;
+            background-color: aqua;
+            border-radius: 15px;
+            height: 100px;
+            padding-left: 10px;
+            width: 29%;
+
+            span {
+                padding-left: 40px;
+                cursor: pointer;
+            }
+
+        }
+
+        dialog[open] {
+            animation: show 1s ease normal;
+        }
+
+        @keyframes show {
+            from {
+                transform: translateY(-110%);
+            }
+
+            to {
+                transform: translateY(0%);
+            }
+        }
+
+        .inp_span {
+            color: burlywood;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+            <b>error:<span class="spn">0</span></b>
+            <b>sucses: <span class="spn2">0</span></b>
+        <h1>Form validation</h1>
+        <form name="login">
+            <label>
+                <input type="text" placeholder="name" name="name">
+                <br>
+                <span class="inp_span">write min 3 words</span>
+                <br>
+                <input type="text" placeholder="age" name="age" minlength="2" maxlength="2">
+                <br>
+                <span class="SEcond">write only numbers</span>
+            </label>
+            <select name="language">
+                <option value="not">not selected</option>
+                <option value="Javascript">Javascript</option>
+                <option value="Java">Java</option>
+                <option value="Python">Python</option>
+                <option value="C++">C++</option>
+                <option value="C#">C#</option>
+            </select>
+            <button>add</button>
+        </form>
+    </center>
+
+    <dialog>
+        <h1>Congratulations <b id="name"></b> <span>&#10005;</span></h1>
+        <br>
+        <p></p>
+
+    </dialog>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
